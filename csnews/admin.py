@@ -7,7 +7,7 @@ from tinymce.widgets import TinyMCE
 
 def show_entry_thumbnail(item):
     return item.image.admin_thumbnail()
-    #return item.admin_thumbanail()
+
 show_entry_thumbnail.short_description = 'Argazkia'
 show_entry_thumbnail.allow_tags = True
 
@@ -19,17 +19,6 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = ['title','summary']
     prepopulated_fields = {'slug': ('title',)}
     photologue_image_fields = ('image',)
-    #raw_id_fields = ('image',)    
-    #form = ArticleAdminForm
-
-    """def formfield_for_dbfield(self, db_field, **kwargs):
-        '''
-        Overrides the default widget for Foreignkey fields if they are
-        specified in the related_search_fields class attribute.
-        '''
-        if db_field.name in self.photologue_image_fields:
-            kwargs['widget'] = PhotologueForeignKeyRawIdWidget(db_field.rel)
-        return super(ArticleAdmin, self).formfield_for_dbfield(db_field, **kwargs)"""
     
 
     class Media:
@@ -59,5 +48,4 @@ class TinyMCEArticleAdmin(ArticleAdmin):
         return super(TinyMCEArticleAdmin, self).formfield_for_dbfield(db_field, **kwargs)
 
 
-    
 admin.site.register(Article, TinyMCEArticleAdmin)

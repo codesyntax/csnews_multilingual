@@ -1,5 +1,4 @@
 from django.db import models
-from tagging.fields import TagField
 from django.utils.translation import ugettext_lazy as _
 from photologue.models import Photo
 from django.db.models.signals import post_save
@@ -21,11 +20,8 @@ class Article(models.Model):
     summary = models.TextField(_('summary'), blank=True)
     body = models.TextField(_('body'))
     image = models.ForeignKey(Photo,null=True,blank=True,related_name=_('news image'))
-        
-    tags = TagField()
 
     is_public = models.BooleanField(default=True)
-    allow_comments = models.BooleanField(_('allow comments'), default=True)
 
     added = models.DateField(_('added'),auto_now_add=True)
     modified = models.DateField(_('modified'),auto_now=True)
@@ -72,4 +68,4 @@ def send_by_email(sender, instance, created,**kwargs):
         msg.send()
         instance.sent_by_email=True
         instance.save()
-post_save.connect(send_by_email, sender=Article)
+#post_save.connect(send_by_email, sender=Article)
