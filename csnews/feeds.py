@@ -2,9 +2,9 @@ from django.contrib.syndication.views import Feed
 from csnews.models import Article
 
 class LatestNews(Feed):
-    title = 'Ahotsak: Albisteak'
+    title = 'Albisteak'
     link = '/albisteak/'
-    description = 'Ahotsak.com Euskal Herriko hizkerak eta ahozko ondarea'
+    description = 'Albisteak'
     
     title_template = 'feeds/rss_title.html'
     description_template = 'feeds/rss_description.html'
