@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.6'
+version = '0.7'
 
 setup(name='csnews',
       version=version,
@@ -19,6 +19,7 @@ setup(name='csnews',
       install_requires=[
           # -*- Extra requirements: -*-
           'django-photologue',
+          'django-tinymce',
       ],
       entry_points="""
 # -*- Entry points: -*-
