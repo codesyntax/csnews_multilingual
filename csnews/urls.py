@@ -5,7 +5,7 @@ from csnews.feeds import LatestNews
 
 urlpatterns = patterns('',
     (r'^$','csnews.views.index'),
-    (r'^feed-(?P<url>.*)/$', LatestNews()),
+    (r'^feed/$', LatestNews()),
     (r'^hemeroteka/', 'csnews.views.hemeroteka'),            
     (r'^(?P<article_slug>[\-\d\w]+)/$','csnews.views.article_index'),
 )
