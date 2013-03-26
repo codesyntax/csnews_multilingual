@@ -34,4 +34,4 @@ class LatestComments(Feed):
         return item.submit_date
         
     def item_link(self,item):
-        return u'%s?utm_source=rss_link&utm_medium=rss&utm_campaign=rss_feed' % (item.content_object.get_absolute_url)
+        return u'%s?utm_source=rss_link&utm_medium=rss&utm_campaign=rss_feed' % (item.content_object.get_absolute_url())
