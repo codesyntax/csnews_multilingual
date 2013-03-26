@@ -19,7 +19,7 @@ class LatestNews(Feed):
     def item_link(self,item):
         return u'/albisteak/%s?utm_source=rss_link&utm_medium=rss&utm_campaign=rss_feed' % (item.slug)
         
-    class LatestComments(Feed):
+class LatestComments(Feed):
     title = 'Iruzkinak'
     link = '/albisteak/feed-iruzkinak'
     description = 'Iruzkinak'
