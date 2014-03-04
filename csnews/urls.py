@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import patterns, url, include
 
 from csnews.feeds import LatestNews, LatestComments
 #feed_dict = {'rss': LatestNews}
