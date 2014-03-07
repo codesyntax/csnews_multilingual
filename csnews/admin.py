@@ -6,7 +6,8 @@ from django.conf import settings
 from tinymce.widgets import TinyMCE
 
 def show_entry_thumbnail(item):
-    return item.image.admin_thumbnail()
+    if item.image:
+        return item.image.admin_thumbnail()
 
 show_entry_thumbnail.short_description = 'Argazkia'
 show_entry_thumbnail.allow_tags = True
