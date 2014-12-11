@@ -20,6 +20,7 @@ setup(name='csnews',
           # -*- Extra requirements: -*-
           'django-photologue',
           'django-tinymce',
+          'django-transmeta',
       ],
       entry_points="""
 # -*- Entry points: -*-
