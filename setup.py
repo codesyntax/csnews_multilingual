@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '2.1'
+version = '3.0'
 
-setup(name='csnews',
+setup(name='csnews_multilingual',
       version=version,
       description="Simple news module",
       long_description=open("README.md").read(),
