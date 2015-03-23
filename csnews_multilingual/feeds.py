@@ -16,4 +16,4 @@ class LatestNews(Feed):
         return item.published
 
     def item_link(self,item):
-        return u'/albisteak/%s?utm_source=rss_link&utm_medium=rss&utm_campaign=rss_feed' % (item.slug)
+        return u'{% url "csnews_article" item.slug %}?utm_source=rss_link&utm_medium=rss&utm_campaign=rss_feed'
