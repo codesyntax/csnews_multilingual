@@ -10,3 +10,6 @@ urlpatterns = patterns('',
     url(r'^(?P<article_slug>[\-\d\w]+)/$','csnews_multilingual.views.article_index',name='csnews_article'),
 )
 
+urlpatterns += patterns('',
+    (r'^photologue/', include('photologue.urls')),
+)
