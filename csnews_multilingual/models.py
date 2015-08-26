@@ -16,25 +16,25 @@ from transmeta import TransMeta
 class Article(models.Model):
     __metaclass__ = TransMeta
     
-    title  = models.CharField(_('title'), max_length=200)
-    slug = models.SlugField(_('slug'),unique=True,db_index=True)
-    published = models.DateTimeField(_('published'))
-    summary = models.TextField(_('summary'), blank=True)
-    body = models.TextField(_('body'))
-    image = models.ForeignKey(Photo,null=True,blank=True,related_name=_('news image'))
+    title  = models.CharField(_('Title'), max_length=200)
+    slug = models.SlugField(_('Slug'),unique=True,db_index=True)
+    published = models.DateTimeField(_('Published'))
+    summary = models.TextField(_('Summary'), blank=True)
+    body = models.TextField(_('Body'))
+    image = models.ForeignKey(Photo,null=True,blank=True,related_name=_('News image'))
         
-    is_public = models.BooleanField(default=True)
+    is_public = models.BooleanField(_('Is public'),default=True)
 
-    added = models.DateField(_('added'),auto_now_add=True)
-    modified = models.DateField(_('modified'),auto_now=True)
+    added = models.DateField(_('Added'),auto_now_add=True)
+    modified = models.DateField(_('Modified'),auto_now=True)
 
     def get_title(self):
         return self.title
 
     class Meta:
         translate = ('title', 'slug', 'summary','body')
-        verbose_name = _('article')
-        verbose_name_plural = _('articles')
+        verbose_name = _('Article')
+        verbose_name_plural = _('Articles')
         ordering  = ('-published',)
         get_latest_by = 'published'
 
