@@ -21,7 +21,7 @@ class Article(models.Model):
     published = models.DateTimeField(_('Published'))
     summary = models.TextField(_('Summary'), blank=True)
     body = models.TextField(_('Body'))
-    image = models.ForeignKey(Photo,null=True,blank=True,related_name=_('News image'))
+    image = models.ForeignKey(Photo,null=True,blank=True,related_name='news_images')
         
     is_public = models.BooleanField(_('Is public'),default=True)
 
@@ -30,6 +30,9 @@ class Article(models.Model):
 
     def get_title(self):
         return self.title
+
+    def get_absolute_url(self):
+        return "%s" % self.slug
 
     class Meta:
         translate = ('title', 'slug', 'summary','body')
