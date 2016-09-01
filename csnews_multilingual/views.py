@@ -1,16 +1,14 @@
 from django.shortcuts import render_to_response
 from django.shortcuts import get_object_or_404
 from django.template import RequestContext
-
 from csnews_multilingual.models import Article
 from csnews_multilingual.diggpaginator import DiggPaginator
-
-import time
 from datetime import datetime
 
 ARTICLE_NUMBER_PER_PAGE = 20
 
-def _get_page(list,page):
+
+def _get_page(list, page):
     """ """
     paginator = DiggPaginator(list, ARTICLE_NUMBER_PER_PAGE, body=5, padding=2)
     try:
@@ -24,24 +22,17 @@ def _get_page(list,page):
         tor = paginator.page(paginator.num_pages)
     return tor
 
+
 def index(request):
-    """ """
-    h = {}
+    articles = Article.objects.filter(is_public=True)
+    page = _get_page(articles, request.GET.get('page', '1'))
+    return render_to_response('news/articles.html', locals(), context_instance=RequestContext(request))
 
-    h['articles'] = Article.objects.filter(is_public=True)
-    h['page'] = _get_page(h['articles'],request.GET.get('orria', '1'))
-    return render_to_response('news/articles.html',h,context_instance=RequestContext(request))
 
-def article_index(request,article_slug):
-    """ """
-    h = {}
-    if request.LANGUAGE_CODE == 'eu':
-        h['obj'] = get_object_or_404(Article, slug_eu = article_slug)
-    else:
-        h['obj'] = get_object_or_404(Article, slug_es = article_slug)
-    return render_to_response('news/article.html',h,context_instance=RequestContext(request))
+def article_index(request, article_slug):
+    obj = get_object_or_404(Article, slug=article_slug)
+    return render_to_response('news/article.html', locals(), context_instance=RequestContext(request))
 
-def hemeroteka(request):
-    """ """
-    h = {}
-    return render_to_response('news/hemeroteka.html',h,context_instance=RequestContext(request))
+
+def archive(request):
+    return render_to_response('news/archive.html', locals(), context_instance=RequestContext(request))
