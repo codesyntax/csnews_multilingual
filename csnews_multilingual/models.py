@@ -1,18 +1,12 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from photologue.models import Photo
-from django.db.models.signals import post_save
-from django.conf import settings
-from django.core.mail import EmailMultiAlternatives
-from django.template.loader import render_to_string
-
-from django.shortcuts import render_to_response
-from django.shortcuts import get_object_or_404
-from django.template import RequestContext
+from django.http import HttpResponseRedirect
 from hvad.models import TranslatableModel, TranslatedFields
+from django.core.urlresolvers import reverse
 
 
-class Article(models.Model):
+class Article(TranslatableModel):
     slug = models.SlugField(_('Slug'), unique=True, db_index=True)
     published = models.DateTimeField(_('Published'))
     image = models.ForeignKey(Photo, null=True, blank=True, related_name='news_images')
@@ -32,7 +26,7 @@ class Article(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "%s" % self.slug
+        return reverse('csnews_article', kwargs={'article_slug': self.slug})
 
     class Meta:
         verbose_name = _('Article')

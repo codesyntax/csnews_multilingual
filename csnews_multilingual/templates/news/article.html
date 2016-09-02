@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load admin_urls %}
 {% load l10n %}
-{% block js %} 
+{% block js %}
 {% comment %}
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 {% endcomment %}
@@ -16,11 +17,11 @@
 {% endblock %}
 {% block admin %}
 {% if user.is_staff %}
-<a href="{% url admin:news_article_change obj.id|unlocalize %}">Admin: {{obj.title}}</a>
+<a href="{% url url admin:csnews_multilingual_article_change obj.id|unlocalize %}">Admin: {{obj.title}}</a>
 {% endif %}
 {% endblock %}
 
-{% if obj %}{% block title%}{{obj.title}} {% endblock %}{%endif%} 
+{% if obj %}{% block title%}{{obj.title}} {% endblock %}{%endif%}
 {% block content%}
 
 <div id="fb-root"></div>
@@ -49,6 +50,4 @@
 
 <div id="harpidetzak">
 </div>
-{%endblock%} 
-
-
+{%endblock%}
