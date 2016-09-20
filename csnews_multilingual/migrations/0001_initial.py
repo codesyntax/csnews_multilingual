@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('photologue', '0014_auto_20160609_1439'),
+        ('photologue', '0010_auto_20160105_1307'),
     ]
 
     operations = [
