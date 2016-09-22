@@ -16,7 +16,9 @@
 <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
 {% endblock %}
 {% block admin %}
-
+{% if user.is_staff %}
+<a href="{% url admin:csnews_multilingual_article_change obj.id|unlocalize %}">Admin: {{obj.title}}</a>
+{% endif %}
 {% endblock %}
 
 {% if obj %}{% block title%}{{obj.title}} {% endblock %}{%endif%}
