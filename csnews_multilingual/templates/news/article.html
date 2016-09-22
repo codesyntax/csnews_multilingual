@@ -17,7 +17,7 @@
 {% endblock %}
 {% block admin %}
 {% if user.is_staff %}
-<a href="{% url url admin:csnews_multilingual_article_change obj.id|unlocalize %}">Admin: {{obj.title}}</a>
+<a href="{% url admin:csnews_multilingual_article_change obj.id|unlocalize %}">Admin: {{obj.title}}</a>
 {% endif %}
 {% endblock %}
 
