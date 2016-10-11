@@ -29,7 +29,7 @@ def index(request):
 
 
 def article_index(request, article_slug):
-    obj = get_object_or_404(Article, slug=article_slug, language=get_language())
+    obj = get_object_or_404(Article, slug=article_slug, translations__language_code=get_language())
     return render_to_response('news/article.html', locals(), context_instance=RequestContext(request))
 
 
