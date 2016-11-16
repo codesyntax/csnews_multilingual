@@ -6,10 +6,26 @@ from hvad.models import TranslatableModel, TranslatedFields
 from django.core.urlresolvers import reverse
 
 
+class Tag(TranslatableModel):
+    translations = TranslatedFields(
+        name=models.CharField(_('Name'), max_length=300),
+    )
+    added = models.DateField(_('Added'), auto_now_add=True)
+
+    class Meta:
+        verbose_name = _('Tag')
+        verbose_name_plural = _('Tags')
+        ordering = ('-added',)
+
+    def __unicode__(self):
+        return u'%s' % self.name
+
+
 class Article(TranslatableModel):
     slug = models.SlugField(_('Slug'), unique=True, db_index=True)
     published = models.DateTimeField(_('Published'))
     image = models.ForeignKey(Photo, null=True, blank=True, related_name='news_images')
+    tags = models.ManyToManyField(Tag, blank=True)
 
     is_public = models.BooleanField(_('Is public'), default=True)
 

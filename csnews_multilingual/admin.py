@@ -1,5 +1,5 @@
 from django.contrib import admin
-from csnews_multilingual.models import Article
+from csnews_multilingual.models import Article, Tag
 from django.conf import settings
 from tinymce.widgets import TinyMCE
 from hvad.admin import TranslatableAdmin
@@ -16,6 +16,26 @@ show_entry_thumbnail.short_description = 'Argazkia'
 show_entry_thumbnail.allow_tags = True
 
 
+class TagAdmin(TranslatableAdmin):
+    def get_name(self, obj):
+        return obj.safe_translation_getter('name')
+    get_name.short_description = _('Name')
+
+    list_display = ('get_name', 'added', 'all_translations')
+    list_display_links = ('get_name',)
+    ordering = ('-added',)
+    search_fields = ['name', ]
+
+    use_fieldsets = (
+        (_("Language dependent"), {
+            'fields': ('name',),
+        }),
+    )
+
+    def get_fieldsets(self, request, obj=None):
+        return self.use_fieldsets
+
+
 class ArticleAdmin(TranslatableAdmin):
     def get_title(self, obj):
         return obj.safe_translation_getter('title')
@@ -24,15 +44,13 @@ class ArticleAdmin(TranslatableAdmin):
     list_display = ('id', 'get_title', 'published', 'is_public', show_entry_thumbnail, 'all_translations')
     list_display_links = ('id', 'get_title')
     ordering = ('-id',)
-    search_fields = ['title', 'summary']
-    # prepopulated_fields = {'slug': ('title_eu',)}
+    search_fields = ['title', 'summary',]
+    filter_horizontal = ('tags',)
     photologue_image_fields = ('image',)
-    # raw_id_fields = ('image',)
-    # form = ArticleAdminForm
 
     use_fieldsets = (
         (_("Language dependent"), {
-            'fields': ('title', 'summary', 'body'),
+            'fields': ('title', 'summary', 'body', 'tags'),
         }),
         (_("Common"), {
             'fields': ('slug', 'published', 'image', 'is_public'),
@@ -54,3 +72,4 @@ class TinyMCEArticleAdmin(ArticleAdmin):
 
 
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Tag, TagAdmin)
