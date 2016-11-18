@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from django.shortcuts import get_object_or_404
+from django.http import Http404
 from django.template import RequestContext
 from csnews_multilingual.models import Article
 from csnews_multilingual.diggpaginator import DiggPaginator
@@ -23,13 +23,16 @@ def _get_page(list, page):
 
 
 def index(request):
-    articles = Article.objects.language().filter(is_public=True)
+    articles = Article.objects.language(get_language()).filter(is_public=True)
     page = _get_page(articles, request.GET.get('page', '1'))
     return render_to_response('news/articles.html', locals(), context_instance=RequestContext(request))
 
 
 def article_index(request, article_slug):
-    obj = get_object_or_404(Article, slug=article_slug, translations__language_code=get_language())
+    try:
+        obj = Article.objects.language(get_language()).get(slug=article_slug)
+    except:
+        raise Http404
     return render_to_response('news/article.html', locals(), context_instance=RequestContext(request))
 
 

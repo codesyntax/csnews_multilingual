@@ -1,8 +1,12 @@
 from django.contrib import admin
-from csnews_multilingual.models import Article, Tag
+from csnews_multilingual.models import Article, Tag, PhotoExtended
+from csnews_multilingual.forms import PhotoAdminExtendedForm
 from django.conf import settings
 from tinymce.widgets import TinyMCE
+from hvad.admin import TranslatableStackedInline
 from hvad.admin import TranslatableAdmin
+from photologue.admin import PhotoAdmin as PhotoAdminDefault
+from photologue.models import Photo
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -41,8 +45,8 @@ class ArticleAdmin(TranslatableAdmin):
         return obj.safe_translation_getter('title')
     get_title.short_description = _('Title')
 
-    list_display = ('id', 'get_title', 'published', 'is_public', show_entry_thumbnail, 'all_translations')
-    list_display_links = ('id', 'get_title')
+    list_display = ('get_title', 'published', 'is_public', show_entry_thumbnail, 'all_translations')
+    list_display_links = ('get_title',)
     ordering = ('-id',)
     search_fields = ['title', 'summary',]
     filter_horizontal = ('tags',)
@@ -53,23 +57,35 @@ class ArticleAdmin(TranslatableAdmin):
             'fields': ('title', 'summary', 'body', 'tags'),
         }),
         (_("Common"), {
-            'fields': ('slug', 'published', 'image', 'is_public'),
+            'fields': ('published', 'image', 'is_public'),
         }),
     )
 
     def get_fieldsets(self, request, obj=None):
         return self.use_fieldsets
 
-
 class TinyMCEArticleAdmin(ArticleAdmin):
     def formfield_for_dbfield(self, db_field, **kwargs):
         if db_field.name in ('body', 'summary'):
             return db_field.formfield(widget=TinyMCE(
                 attrs={'cols': 80, 'rows': 30},
-                mce_attrs={settings.TINYMCE_DEFAULT_CONFIG},
+                mce_attrs=settings.TINYMCE_DEFAULT_CONFIG,
             ))
         return super(TinyMCEArticleAdmin, self).formfield_for_dbfield(db_field, **kwargs)
 
 
-admin.site.register(Article, ArticleAdmin)
+class PhotoExtendedInline(TranslatableStackedInline):
+    model = PhotoExtended
+    can_delete = False
+
+
+class PhotoAdmin(PhotoAdminDefault):
+    form = PhotoAdminExtendedForm
+    inlines = [PhotoExtendedInline, ]
+
+
+
+admin.site.register(Article, TinyMCEArticleAdmin)
 admin.site.register(Tag, TagAdmin)
+admin.site.unregister(Photo)
+admin.site.register(Photo, PhotoAdmin)
