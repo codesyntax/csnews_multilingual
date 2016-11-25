@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-26 10:44+0200\n"
+"POT-Creation-Date: 2016-11-25 15:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,50 +18,122 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: models.py:19
+#: admin.py:26 models.py:11
+msgid "Name"
+msgstr ""
+
+#: admin.py:34 admin.py:56
+msgid "Language dependent"
+msgstr ""
+
+#: admin.py:46 models.py:35
 msgid "Title"
 msgstr "Título"
 
-#: models.py:20
-msgid "Slug"
+#: admin.py:59
+msgid "Common"
 msgstr ""
 
-#: models.py:21
-msgid "Published"
-msgstr "Publicado"
+#: apps.py:6 templates/news/articles.html:3 templates/news/articles.html:7
+msgid "News"
+msgstr "Noticias"
 
-#: models.py:22
-msgid "Summary"
-msgstr "Resumen"
-
-#: models.py:23
-msgid "Body"
-msgstr "Texto"
-
-#: models.py:24
-msgid "News image"
-msgstr "Imagen destacado"
-
-#: models.py:26
-msgid "Is public"
-msgstr "Es público"
-
-#: models.py:28
+#: models.py:13 models.py:31
 msgid "Added"
 msgstr "Añadido"
 
+#: models.py:16
+msgid "Tag"
+msgstr ""
+
+#: models.py:17
+msgid "Tags"
+msgstr ""
+
+#: models.py:25
+msgid "Published"
+msgstr "Publicado"
+
 #: models.py:29
+msgid "Is public"
+msgstr "Es público"
+
+#: models.py:32
 msgid "Modified"
 msgstr "Modificado"
 
 #: models.py:36
+msgid "Summary"
+msgstr "Resumen"
+
+#: models.py:37
+msgid "Body"
+msgstr "Texto"
+
+#: models.py:38
+msgid "Slug"
+msgstr ""
+
+#: models.py:52
 msgid "Article"
 msgstr "Artículo"
 
-#: models.py:37
+#: models.py:53
 msgid "Articles"
 msgstr "Artículos"
 
-#: templates/news/articles.html:3
-msgid "News"
-msgstr "Noticias"
+#: models.py:65
+msgid "caption"
+msgstr ""
+
+#: models.py:69
+msgid "Multilingual Caption"
+msgstr ""
+
+#: models.py:70
+msgid "Multilingual Captions"
+msgstr ""
+
+#: templates/news/archive.html:4 templates/news/archive.html:7
+#: templates/news/articles.html:61
+msgid "Archive"
+msgstr ""
+
+#: templates/news/articles.html:23
+msgid "Read more..."
+msgstr ""
+
+#: templates/news/articles.html:36
+msgid "Result"
+msgstr ""
+
+#: templates/news/articles.html:36
+msgid "Pages"
+msgstr ""
+
+#: templates/news/articles.html:56
+msgid "Suscription"
+msgstr ""
+
+#: templates/news/articles.html:58
+msgid "Suscribe to RSS"
+msgstr ""
+
+#: templates/news/articles.html:59
+msgid "Suscribe to email"
+msgstr ""
+
+#: urls.py:10
+msgid "^tag/(?P<tag_name>[\\d\\w]+)/$"
+msgstr ""
+
+#: urls.py:11
+msgid "^feed/$"
+msgstr ""
+
+#: urls.py:12
+msgid "^archive/$"
+msgstr ""
+
+#~ msgid "News image"
+#~ msgstr "Imagen destacado"

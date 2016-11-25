@@ -16,121 +16,121 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: admin.py:26 models.py:11
 msgid "Name"
-msgstr "Izena"
+msgstr ""
 
 #: admin.py:34 admin.py:56
 msgid "Language dependent"
-msgstr "Hizkuntzaren arabera"
+msgstr ""
 
 #: admin.py:46 models.py:35
 msgid "Title"
-msgstr "Izenburua"
+msgstr ""
 
 #: admin.py:59
 msgid "Common"
-msgstr "Arrunta"
+msgstr ""
 
 #: apps.py:6 templates/news/articles.html:3 templates/news/articles.html:7
 msgid "News"
-msgstr "Albisteak"
+msgstr ""
 
 #: models.py:13 models.py:31
 msgid "Added"
-msgstr "Gehituta"
+msgstr ""
 
 #: models.py:16
 msgid "Tag"
-msgstr "Etiketa"
+msgstr ""
 
 #: models.py:17
 msgid "Tags"
-msgstr "Etiketak"
+msgstr ""
 
 #: models.py:25
 msgid "Published"
-msgstr "Publikatua"
+msgstr ""
 
 #: models.py:29
 msgid "Is public"
-msgstr "Publikoa da"
+msgstr ""
 
 #: models.py:32
 msgid "Modified"
-msgstr "Aldatuta"
+msgstr ""
 
 #: models.py:36
 msgid "Summary"
-msgstr "Laburpena"
+msgstr ""
 
 #: models.py:37
 msgid "Body"
-msgstr "Textua"
+msgstr ""
 
 #: models.py:38
 msgid "Slug"
-msgstr "Sluga"
+msgstr ""
 
 #: models.py:52
 msgid "Article"
-msgstr "Artikulua"
+msgstr ""
 
 #: models.py:53
 msgid "Articles"
-msgstr "Artikuluak"
+msgstr ""
 
 #: models.py:65
 msgid "caption"
-msgstr "testua"
+msgstr ""
 
 #: models.py:69
 msgid "Multilingual Caption"
-msgstr "Testu eleanitza"
+msgstr ""
 
 #: models.py:70
 msgid "Multilingual Captions"
-msgstr "Testu eleanitzak"
+msgstr ""
 
 #: templates/news/archive.html:4 templates/news/archive.html:7
 #: templates/news/articles.html:61
 msgid "Archive"
-msgstr "Artxiboa"
+msgstr ""
 
 #: templates/news/articles.html:23
 msgid "Read more..."
-msgstr "Irakurri gehiago..."
+msgstr ""
 
 #: templates/news/articles.html:36
 msgid "Result"
-msgstr "Emaitza"
+msgstr ""
 
 #: templates/news/articles.html:36
 msgid "Pages"
-msgstr "Orriak"
+msgstr ""
 
 #: templates/news/articles.html:56
 msgid "Suscription"
-msgstr "Harpidetza"
+msgstr ""
 
 #: templates/news/articles.html:58
 msgid "Suscribe to RSS"
-msgstr "Harpidetu RSSra"
+msgstr ""
 
 #: templates/news/articles.html:59
 msgid "Suscribe to email"
-msgstr "Harpidetu epostara"
+msgstr ""
 
 #: urls.py:10
 msgid "^tag/(?P<tag_name>[\\d\\w]+)/$"
-msgstr "^etiketa/(?P<tag_name>[\\d\\w]+)/$"
-
+msgstr "^etiquette/(?P<tag_name>[\\d\\w]+)/$"
+    
 #: urls.py:11
 msgid "^feed/$"
-msgstr "^jarioa/$"
+msgstr "^feed/$"
 
 #: urls.py:12
 msgid "^archive/$"
-msgstr "^artxiboa/$"
+msgstr "^archive/$"

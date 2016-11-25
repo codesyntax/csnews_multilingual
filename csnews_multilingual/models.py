@@ -9,8 +9,13 @@ from django.template.defaultfilters import slugify
 class Tag(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(_('Name'), max_length=300),
+        slug=models.CharField(_('Slug'), max_length=200, db_index=True)
     )
     added = models.DateField(_('Added'), auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Tag, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = _('Tag')
