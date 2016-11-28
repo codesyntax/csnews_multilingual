@@ -125,7 +125,7 @@ msgstr ""
 
 #: urls.py:10
 msgid "^tag/(?P<tag_slug>[\\d\\w]+)/$"
-msgstr "^tag/(?P<tag_slug>[\\d\\w]+)/$"
+msgstr "^etiqueta/(?P<tag_slug>[\\d\\w]+)/$"
 
 #: urls.py:11
 msgid "^feed/$"
@@ -133,4 +133,4 @@ msgstr "^feed/$"
 
 #: urls.py:12
 msgid "^archive/$"
-msgstr "^archive/$"
+msgstr "^archivo/$"
