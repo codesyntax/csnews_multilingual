@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-25 15:06+0100\n"
+"POT-Creation-Date: 2016-11-28 09:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Language dependent"
 msgstr ""
 
-#: admin.py:46 models.py:35
+#: admin.py:46 models.py:40
 msgid "Title"
 msgstr "Título"
 
@@ -38,59 +38,59 @@ msgstr ""
 msgid "News"
 msgstr "Noticias"
 
-#: models.py:13 models.py:31
-msgid "Added"
-msgstr "Añadido"
-
-#: models.py:16
-msgid "Tag"
-msgstr ""
-
-#: models.py:17
-msgid "Tags"
-msgstr ""
-
-#: models.py:25
-msgid "Published"
-msgstr "Publicado"
-
-#: models.py:29
-msgid "Is public"
-msgstr "Es público"
-
-#: models.py:32
-msgid "Modified"
-msgstr "Modificado"
-
-#: models.py:36
-msgid "Summary"
-msgstr "Resumen"
-
-#: models.py:37
-msgid "Body"
-msgstr "Texto"
-
-#: models.py:38
+#: models.py:12 models.py:43
 msgid "Slug"
 msgstr ""
 
-#: models.py:52
+#: models.py:14 models.py:36
+msgid "Added"
+msgstr "Añadido"
+
+#: models.py:21
+msgid "Tag"
+msgstr ""
+
+#: models.py:22
+msgid "Tags"
+msgstr ""
+
+#: models.py:30
+msgid "Published"
+msgstr "Publicado"
+
+#: models.py:34
+msgid "Is public"
+msgstr "Es público"
+
+#: models.py:37
+msgid "Modified"
+msgstr "Modificado"
+
+#: models.py:41
+msgid "Summary"
+msgstr "Resumen"
+
+#: models.py:42
+msgid "Body"
+msgstr "Texto"
+
+#: models.py:57
 msgid "Article"
 msgstr "Artículo"
 
-#: models.py:53
+#: models.py:58
 msgid "Articles"
 msgstr "Artículos"
 
-#: models.py:65
+#: models.py:70
 msgid "caption"
 msgstr ""
 
-#: models.py:69
+#: models.py:74
 msgid "Multilingual Caption"
 msgstr ""
 
-#: models.py:70
+#: models.py:75
 msgid "Multilingual Captions"
 msgstr ""
 
@@ -124,16 +124,13 @@ msgid "Suscribe to email"
 msgstr ""
 
 #: urls.py:10
-msgid "^tag/(?P<tag_name>[\\d\\w]+)/$"
-msgstr ""
+msgid "^tag/(?P<tag_slug>[\\d\\w]+)/$"
+msgstr "^tag/(?P<tag_slug>[\\d\\w]+)/$"
 
 #: urls.py:11
 msgid "^feed/$"
-msgstr ""
+msgstr "^feed/$"
 
 #: urls.py:12
 msgid "^archive/$"
-msgstr ""
-
-#~ msgid "News image"
-#~ msgstr "Imagen destacado"
+msgstr "^archive/$"
