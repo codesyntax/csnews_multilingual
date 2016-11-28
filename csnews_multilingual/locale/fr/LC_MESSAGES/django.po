@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-28 09:39+0100\n"
+"POT-Creation-Date: 2016-11-28 10:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,15 +122,3 @@ msgstr ""
 #: templates/news/articles.html:59
 msgid "Suscribe to email"
 msgstr ""
-
-#: urls.py:10
-msgid "^tag/(?P<tag_slug>[\\d\\w]+)/$"
-msgstr "^etiquette/(?P<tag_slug>[\\d\\w]+)/$"
-
-#: urls.py:11
-msgid "^feed/$"
-msgstr "^feed/$"
-
-#: urls.py:12
-msgid "^archive/$"
-msgstr "^archive/$"
