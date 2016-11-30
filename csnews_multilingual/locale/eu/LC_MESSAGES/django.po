@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-28 13:37+0100\n"
+"POT-Creation-Date: 2016-11-30 10:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,7 +132,6 @@ msgid "^feed/$"
 msgstr "^jarioa/$"
 
 #: urls.py:12
-#| msgid "Archive"
 msgid "^archive/$"
 msgstr "^artxiboa/$"
 
