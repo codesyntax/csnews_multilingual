@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-30 10:12+0100\n"
+"POT-Creation-Date: 2016-12-02 12:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,6 +37,20 @@ msgstr ""
 #: apps.py:6 templates/news/articles.html:3 templates/news/articles.html:7
 msgid "News"
 msgstr "Noticias"
+
+#: feeds.py:8
+#, fuzzy
+#| msgid "News"
+msgid "News feed"
+msgstr "Noticias"
+
+#: feeds.py:9
+msgid "feed"
+msgstr ""
+
+#: feeds.py:10
+msgid "News feed description"
+msgstr ""
 
 #: models.py:12 models.py:43
 msgid "Slug"
