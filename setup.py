@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '3.16'
+version = '3.17.dev0'
 
 setup(name='csnews_multilingual',
       version=version,
