@@ -18,6 +18,7 @@ setup(name='csnews_multilingual',
       zip_safe=False,
       install_requires=[
           # -*- Extra requirements: -*-
+          'Django>=1.10',
           'django-photologue',
           'django-tinymce',
           'django-hvad',
