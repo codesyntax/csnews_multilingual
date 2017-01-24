@@ -1,0 +1,10 @@
+3.17.dev (UNRELEASED)
+======================
+
+- updates to work with Django 1.10
+
+
+3.16 (UNKNOWN)
+==============
+
+- previous versions
