@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.http import Http404
 from django.template import RequestContext
 from csnews_multilingual.models import Article, Tag
@@ -25,7 +25,7 @@ def _get_page(list, page):
 def index(request):
     articles = Article.objects.language(get_language()).filter(is_public=True)
     page = _get_page(articles, request.GET.get('page', '1'))
-    return render_to_response('news/articles.html', locals(), context_instance=RequestContext(request))
+    return render(request, 'news/articles.html', locals())
 
 
 def tag_index(request, tag_slug):
@@ -35,7 +35,7 @@ def tag_index(request, tag_slug):
         raise Http404
     articles = Article.objects.language(get_language()).filter(tags=obj, is_public=True)
     page = _get_page(articles, request.GET.get('page', '1'))
-    return render_to_response('news/articles.html', locals(), context_instance=RequestContext(request))
+    return render(request, 'news/articles.html', locals())
 
 
 def article_index(request, article_slug):
@@ -43,8 +43,8 @@ def article_index(request, article_slug):
         obj = Article.objects.language(get_language()).get(slug=article_slug)
     except:
         raise Http404
-    return render_to_response('news/article.html', locals(), context_instance=RequestContext(request))
+    return render(request, 'news/article.html', locals())
 
 
 def archive(request):
-    return render_to_response('news/archive.html', locals(), context_instance=RequestContext(request))
+    return render(request, 'news/archive.html', locals())
