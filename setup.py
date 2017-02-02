@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-import sys, os
 
 version = '3.18.dev0'
 
@@ -7,7 +6,7 @@ setup(name='csnews_multilingual',
       version=version,
       description="Simple news module",
       long_description=open("README.md").read(),
-      classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      classifiers=[],  # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
       keywords='',
       author='Urtzi Odriozola',
       author_email='uodriozola@codesyntax.com',
@@ -24,6 +23,6 @@ setup(name='csnews_multilingual',
           'django-hvad',
       ],
       entry_points="""
-# -*- Entry points: -*-
-""",
+          # -*- Entry points: -*-
+          """,
       )

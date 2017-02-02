@@ -4,6 +4,7 @@ from django.conf import settings
 
 MULTISITE = getattr(settings, 'PHOTOLOGUE_MULTISITE', False)
 
+
 class PhotoAdminExtendedForm(forms.ModelForm):
 
     class Meta:
@@ -11,4 +12,4 @@ class PhotoAdminExtendedForm(forms.ModelForm):
         if MULTISITE:
             exclude = []
         else:
-            exclude = ['sites','caption']
+            exclude = ['sites', 'caption']

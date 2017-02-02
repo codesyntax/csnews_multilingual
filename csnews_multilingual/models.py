@@ -6,6 +6,7 @@ from hvad.models import TranslatableModel, TranslatedFields
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 
+
 class Tag(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(_('Name'), max_length=300),

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-02 12:39+0100\n"
+"POT-Creation-Date: 2017-02-02 11:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: admin.py:26 models.py:11
+#: admin.py:26 models.py:12
 msgid "Name"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Language dependent"
 msgstr ""
 
-#: admin.py:46 models.py:40
+#: admin.py:46 models.py:41
 msgid "Title"
 msgstr "Título"
 
@@ -38,73 +38,73 @@ msgstr ""
 msgid "News"
 msgstr "Noticias"
 
-#: feeds.py:8
+#: feeds.py:9
 #, fuzzy
 #| msgid "News"
 msgid "News feed"
 msgstr "Noticias"
 
-#: feeds.py:9
+#: feeds.py:10
 msgid "feed"
 msgstr ""
 
-#: feeds.py:10
+#: feeds.py:11
 msgid "News feed description"
 msgstr ""
 
-#: models.py:12 models.py:43
+#: models.py:13 models.py:44
 msgid "Slug"
 msgstr ""
 
-#: models.py:14 models.py:36
+#: models.py:15 models.py:37
 msgid "Added"
 msgstr "Añadido"
 
-#: models.py:21
+#: models.py:22
 msgid "Tag"
 msgstr ""
 
-#: models.py:22
+#: models.py:23
 msgid "Tags"
 msgstr ""
 
-#: models.py:30
+#: models.py:31
 msgid "Published"
 msgstr "Publicado"
 
-#: models.py:34
+#: models.py:35
 msgid "Is public"
 msgstr "Es público"
 
-#: models.py:37
+#: models.py:38
 msgid "Modified"
 msgstr "Modificado"
 
-#: models.py:41
+#: models.py:42
 msgid "Summary"
 msgstr "Resumen"
 
-#: models.py:42
+#: models.py:43
 msgid "Body"
 msgstr "Texto"
 
-#: models.py:57
+#: models.py:58
 msgid "Article"
 msgstr "Artículo"
 
-#: models.py:58
+#: models.py:59
 msgid "Articles"
 msgstr "Artículos"
 
-#: models.py:70
+#: models.py:71
 msgid "caption"
 msgstr ""
 
-#: models.py:74
+#: models.py:75
 msgid "Multilingual Caption"
 msgstr ""
 
-#: models.py:75
+#: models.py:76
 msgid "Multilingual Captions"
 msgstr ""
 
