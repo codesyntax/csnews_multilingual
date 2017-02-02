@@ -1,4 +1,4 @@
-3.18 (unreleased)
+3.18 (2017-02-02)
 =================
 
 - Preparing release 3.17 [Urtzi Odriozola <uodriozola@codesyntax.com>]
