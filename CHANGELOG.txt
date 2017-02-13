@@ -1,4 +1,4 @@
-3.19 (unreleased)
+3.19 (2017-02-13)
 =================
 
 - Update urls.py [Urtzi Odriozola <uodriozola@codesyntax.com>]
