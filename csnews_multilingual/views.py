@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import Http404
-from django.template import RequestContext
+from django.contrib.sites.shortcuts import get_current_site
 from csnews_multilingual.models import Article, Tag
 from csnews_multilingual.diggpaginator import DiggPaginator
 from django.utils.translation import get_language
@@ -40,6 +40,7 @@ def tag_index(request, tag_slug):
 
 def article_index(request, article_slug):
     try:
+        site = get_current_site(request)
         obj = Article.objects.language(get_language()).get(slug=article_slug)
     except:
         raise Http404

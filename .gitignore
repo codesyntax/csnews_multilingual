@@ -1,4 +1,5 @@
 *.pyc
 *.pyo
+*.mo
 csnews.egg-info
 csnews_multilingual.egg-info
