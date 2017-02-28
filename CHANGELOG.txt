@@ -1,7 +1,8 @@
 3.20 (unreleased)
 =================
 
-- Nothing changed yet.
+- sites in views [Urtzi Odriozola <uodriozola@codesyntax.com>]
+
 
 
 3.19 (2017-02-13)
