@@ -1,7 +1,10 @@
 3.20 (unreleased)
 =================
 
+- Update changelog [Urtzi Odriozola <uodriozola@codesyntax.com>]
+
 - sites in views [Urtzi Odriozola <uodriozola@codesyntax.com>]
+
 
 
 
