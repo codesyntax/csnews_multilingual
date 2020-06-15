@@ -1,7 +1,8 @@
 3.21 (unreleased)
 =================
 
-- Nothing changed yet.
+- remove pagination [Urtzi Odriozola <uodriozola@codesyntax.com>]
+
 
 
 3.20 (2017-02-28)
