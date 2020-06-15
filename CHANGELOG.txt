@@ -1,4 +1,4 @@
-3.21 (unreleased)
+3.21 (2020-06-15)
 =================
 
 - remove pagination [Urtzi Odriozola <uodriozola@codesyntax.com>]
