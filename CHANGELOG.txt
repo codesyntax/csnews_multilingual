@@ -1,7 +1,8 @@
 3.22 (unreleased)
 =================
 
-- Nothing changed yet.
+- slugs plone style [Urtzi Odriozola <uodriozola@codesyntax.com>]
+
 
 
 3.21 (2020-06-15)
