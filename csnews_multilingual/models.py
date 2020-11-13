@@ -50,9 +50,9 @@ class Article(TranslatableModel):
     def get_absolute_url(self):
         return reverse('csnews_article', kwargs={'article_slug': self.slug})
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super(Article, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     self.slug = slugify(self.title)
+    #     super(Article, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = _('Article')
