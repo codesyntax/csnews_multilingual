@@ -1,4 +1,4 @@
-3.22 (unreleased)
+3.22 (2020-11-13)
 =================
 
 - slugs plone style [Urtzi Odriozola <uodriozola@codesyntax.com>]
