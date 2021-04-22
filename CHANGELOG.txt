@@ -1,4 +1,4 @@
-3.24 (unreleased)
+3.24 (2021-04-22)
 =================
 
 - bugfix [Urtzi Odriozola <uodriozola@codesyntax.com>]
