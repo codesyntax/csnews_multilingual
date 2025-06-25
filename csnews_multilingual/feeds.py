@@ -1,8 +1,8 @@
 from django.contrib.syndication.views import Feed
 from csnews_multilingual.models import Article
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.translation import get_language
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 
 class LatestNews(Feed):

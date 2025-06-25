@@ -1,21 +1,18 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from photologue.models import Photo
-from django.http import HttpResponseRedirect
-from hvad.models import TranslatableModel, TranslatedFields
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template.defaultfilters import slugify
 
 
-class Tag(TranslatableModel):
-    translations = TranslatedFields(
-        name=models.CharField(_("Name"), max_length=300),
-        slug=models.CharField(_("Slug"), max_length=200, db_index=True),
-    )
+class Tag(models.Model):
+    name = models.CharField(_("Name"), max_length=300)
+    slug = models.CharField(_("Slug"), max_length=200, db_index=True, blank=True)
     added = models.DateField(_("Added"), auto_now_add=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        if not self.slug:
+            self.slug = slugify(self.name)
         super(Tag, self).save(*args, **kwargs)
 
     class Meta:
@@ -23,13 +20,13 @@ class Tag(TranslatableModel):
         verbose_name_plural = _("Tags")
         ordering = ("-added",)
 
-    def __unicode__(self):
-        return u"%s" % self.name
+    def __str__(self):
+        return self.name
 
 
-class Article(TranslatableModel):
+class Article(models.Model):
     published = models.DateTimeField(_("Published"))
-    image = models.ForeignKey(Photo, null=True, blank=True, related_name="news_images")
+    image = models.ForeignKey(Photo, null=True, blank=True, related_name="news_images", on_delete=models.SET_NULL)
     tags = models.ManyToManyField(Tag, blank=True)
 
     is_public = models.BooleanField(_("Is public"), default=True)
@@ -37,12 +34,10 @@ class Article(TranslatableModel):
     added = models.DateField(_("Added"), auto_now_add=True)
     modified = models.DateField(_("Modified"), auto_now=True)
 
-    translations = TranslatedFields(
-        title=models.CharField(_("Title"), max_length=200),
-        summary=models.TextField(_("Summary"), blank=True),
-        body=models.TextField(_("Body")),
-        slug=models.CharField(_("Slug"), max_length=200, db_index=True),
-    )
+    title = models.CharField(_("Title"), max_length=200)
+    summary = models.TextField(_("Summary"), blank=True)
+    body = models.TextField(_("Body"))
+    slug = models.CharField(_("Slug"), max_length=200, db_index=True, blank=True)
 
     def get_title(self):
         return self.title
@@ -51,7 +46,7 @@ class Article(TranslatableModel):
         return reverse("csnews_article", kwargs={"article_slug": self.slug})
 
     def save(self, *args, **kwargs):
-        if self.slug == "":
+        if not self.slug:
             self.slug = slugify(self.title)
         super(Article, self).save(*args, **kwargs)
 
@@ -61,18 +56,18 @@ class Article(TranslatableModel):
         ordering = ("-published",)
         get_latest_by = "published"
 
-    def __unicode__(self):
-        return u"%s" % self.title
+    def __str__(self):
+        return self.title
 
 
-class PhotoExtended(TranslatableModel):
-    photo = models.OneToOneField(Photo, related_name="extended")
+class PhotoExtended(models.Model):
+    photo = models.OneToOneField(Photo, related_name="extended", on_delete=models.CASCADE)
 
-    translations = TranslatedFields(caption=models.TextField(_("caption"), blank=True))
+    caption = models.TextField(_("caption"), blank=True)
 
     class Meta:
         verbose_name = _("Multilingual Caption")
         verbose_name_plural = _("Multilingual Captions")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.photo.title

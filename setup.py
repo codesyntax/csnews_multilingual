@@ -20,7 +20,7 @@ setup(name='csnews_multilingual',
           'Django>=1.10',
           'django-photologue',
           'django-tinymce',
-          'django-hvad',
+          'django-modeltranslation',
       ],
       entry_points="""
           # -*- Entry points: -*-
