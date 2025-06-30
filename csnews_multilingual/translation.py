@@ -2,13 +2,13 @@ from modeltranslation.translator import translator, TranslationOptions
 from .models import Article, Tag, PhotoExtended
 
 class ArticleTranslationOptions(TranslationOptions):
-    fields = ('title', 'summary', 'body', 'slug',)
+    fields = ()
 
 class TagTranslationOptions(TranslationOptions):
-    fields = ('name', 'slug',)
+    fields = ()
 
 class PhotoExtendedTranslationOptions(TranslationOptions):
-    fields = ('caption',)
+    fields = ()
 
 translator.register(Article, ArticleTranslationOptions)
 translator.register(Tag, TagTranslationOptions)
