@@ -1,7 +1,14 @@
 3.26 (unreleased)
 =================
 
-- Nothing changed yet.
+- fix: Photologue dependency [Urtzi Odriozola <uodriozola@codesyntax.com>]
+
+- Preparing release 3.25 [Urtzi Odriozola <uodriozola@codesyntax.com>]
+
+- Update changelog [Urtzi Odriozola <uodriozola@codesyntax.com>]
+
+- feat: More articles + vertical image [Urtzi Odriozola <uodriozola@codesyntax.com>]
+
 
 
 3.25 (2026-06-10)
