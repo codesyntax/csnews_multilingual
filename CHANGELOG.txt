@@ -1,4 +1,4 @@
-3.26 (unreleased)
+3.26 (2026-06-10)
 =================
 
 - fix: Photologue dependency [Urtzi Odriozola <uodriozola@codesyntax.com>]
