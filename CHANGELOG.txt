@@ -1,4 +1,4 @@
-3.25 (unreleased)
+3.25 (2026-06-10)
 =================
 
 - feat: More articles + vertical image [Urtzi Odriozola <uodriozola@codesyntax.com>]
