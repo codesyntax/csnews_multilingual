@@ -1,5 +1,5 @@
-3.25 (unreleased)
-=================
+4.0 (2026-06-10)
+================
 
 - chore: Bump version [Urtzi Odriozola <uodriozola@codesyntax.com>]
 
