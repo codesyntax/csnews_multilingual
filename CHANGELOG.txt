@@ -1,7 +1,12 @@
 3.25 (unreleased)
 =================
 
-- Nothing changed yet.
+- chore: Bump version [Urtzi Odriozola <uodriozola@codesyntax.com>]
+
+- Quit translatable fields [Gorka Garcia <ggarcia@codesyntax.com>]
+
+- Update for django 5 [Gorka Garcia <ggarcia@codesyntax.com>]
+
 
 
 3.24 (2021-04-22)
