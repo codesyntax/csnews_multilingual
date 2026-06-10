@@ -50,14 +50,15 @@ class ArticleAdmin(TranslatableAdmin):
     ordering = ('-id',)
     search_fields = ['title', 'summary',]
     filter_horizontal = ('tags',)
-    photologue_image_fields = ('image',)
+    photologue_image_fields = ('image', 'vertical_image')
+    raw_id_fields = ['image', 'vertical_image']
 
     use_fieldsets = (
         (_("Language dependent"), {
             'fields': ('title', 'summary', 'body', 'tags'),
         }),
         (_("Common"), {
-            'fields': ('published', 'image', 'is_public'),
+            'fields': ('published', 'image', 'vertical_image', 'is_public'),
         }),
     )
 

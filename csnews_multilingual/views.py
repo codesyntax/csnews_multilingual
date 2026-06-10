@@ -26,6 +26,7 @@ def article_index(request, article_slug):
     try:
         site = get_current_site(request)
         obj = Article.objects.language(get_language()).get(slug=article_slug)
+        more_articles = Article.objects.language(get_language()).filter(is_public=True, tags__in=obj.tags.all()).exclude(id=obj.id).distinct()[:3]
     except:
         raise Http404
     return render(request, 'news/article.html', locals())

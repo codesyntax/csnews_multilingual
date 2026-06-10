@@ -29,7 +29,8 @@ class Tag(TranslatableModel):
 
 class Article(TranslatableModel):
     published = models.DateTimeField(_("Published"))
-    image = models.ForeignKey(Photo, null=True, blank=True, related_name="news_images")
+    image = models.ForeignKey(Photo, null=True, blank=True, related_name="news_images",verbose_name=_("Image"))
+    vertical_image = models.ForeignKey(Photo, null=True, blank=True, related_name="news_vertical_images",verbose_name=_("Vertical Image"))
     tags = models.ManyToManyField(Tag, blank=True)
 
     is_public = models.BooleanField(_("Is public"), default=True)
